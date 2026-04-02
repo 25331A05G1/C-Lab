@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    int arr[5] = {10, 20, 30, 40, 50};
+    int *ptr;
+    int i;
+
+    // Pointing to the first element of array
+    ptr = arr;
+
+    printf("Array elements using pointer arithmetic:\n");
+
+    for(i = 0; i < 5; i++) {
+        printf("Value = %d, Address = %u\n", *(ptr + i), (ptr + i));
+    }
+
+    // Demonstrating increment
+    printf("\nPointer increment demonstration:\n");
+    ptr = arr;
+    for(i = 0; i < 5; i++) {
+        printf("%d ", *ptr);
+        ptr++;   // moves to next element
+    }
+
+    return 0;
+}
