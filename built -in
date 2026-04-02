@@ -1,35 +1,39 @@
 #include <stdio.h>
-#include <string.h>   // Required for string functions
+#include <string.h>
 
- int main() 
-{
-    char str1[50], str2[50], copyStr[50];
-    int cmp, len;
+int main() {
+    char str1[100], str2[100], str3[200];
+    int length, result;
 
+    // Input strings
     printf("Enter first string: ");
-    gets(str1);
+    scanf("%s", str1);
 
     printf("Enter second string: ");
-    gets(str2);
-
-    // String Length
-    len = strlen(str1);
-    printf("\nLength of first string = %d", len);
+    scanf("%s", str2);
 
     // String Copy
-    strcpy(copyStr, str1);
-    printf("\nCopied string = %s", copyStr);
+    strcpy(str3, str1);
+    printf("\nAfter copying, str3 = %s", str3);
 
     // String Concatenation
     strcat(str1, str2);
-    printf("\nAfter Concatenation = %s", str1);
+    printf("\nAfter concatenation, str1 = %s", str1);
+
+    // String Length
+    length = strlen(str2);
+    printf("\nLength of second string = %d", length);
 
     // String Comparison
-    cmp = strcmp(str1, str2);
-    if(cmp == 0)
-        printf("\nStrings are equal\n");
+    result = strcmp(str2, str3);
+
+    if(result == 0)
+        printf("\nStrings are equal");
+    else if(result > 0)
+        printf("\nSecond string is greater than copied string");
     else
-        printf("\nStrings are not equal\n");
+        printf("\nSecond string is smaller than copied string");
 
     return 0;
 }
+   
