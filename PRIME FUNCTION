@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+// Function to check prime
+int isPrime(int num) {
+    int i;
+
+    if(num <= 1)
+        return 0;  // Not prime
+
+    for(i = 2; i <= num/2; i++) {
+        if(num % i == 0)
+            return 0;  // Not prime
+    }
+
+    return 1;  // Prime
+}
+
+int main() {
+    int number, result;
+
+    // Input
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    // Function call
+    result = isPrime(number);
+
+    // Output
+    if(result == 1)
+        printf("The number is Prime\n");
+    else
+        printf("The number is Not Prime\n");
+
+    return 0;
+}
