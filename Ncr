@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+// Recursive function to calculate nCr
+int nCr(int n, int r) {
+    if(r == 0 || r == n)
+        return 1;
+    else
+        return nCr(n - 1, r - 1) + nCr(n - 1, r);
+}
+
+int main() {
+    int n, r, result;
+
+    // Input
+    printf("Enter values of n and r (n > r): ");
+    scanf("%d %d", &n, &r);
+
+    // Function call
+    result = nCr(n, r);
+
+    // Output
+    printf("nCr = %d\n", result);
+
+    return 0;
+}
